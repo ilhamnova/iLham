@@ -9,12 +9,12 @@ Modified @ Farzain - zFz
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-curl -v -X POST https://api.line.me/v2/oauth/accessToken \
+$channelSecret = curl -v -X POST https://api.line.me/v2/oauth/accessToken \
 -H "Content-Type:application/x-www-form-urlencoded" \
 --data-urlencode 'grant_type=client_credentials' \
 --data-urlencode 'client_id={channel ID}' \
 --data-urlencode 'client_secret={channel secret}'
-$channelSecret = 'YOUR-CHANNEL-SECRET-CODE';//sesuaikan
+$channelSecret = https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id={CHANNEL_ID}&redirect_uri={CALLBACK_URL}&state={STATE}&bot_prompt={BOT_PROMPT}&scope={SCOPE_LIST}
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
